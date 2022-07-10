@@ -74,7 +74,7 @@ public class LinkedList<T> {
     }
 
     /**
-     * Removes the last element of the list and returns it.
+     * Removes the last element from the list and returns it.
      * @return The removed element.
      */
     public T removeLast() {
@@ -95,6 +95,25 @@ public class LinkedList<T> {
             head = tail = null;
 
         return ultimateNode.value();
+    }
+
+    /**
+     * Removes the first element from the list and returns it.
+     * @return The removed element.
+     */
+    public T removeFirst() {
+        if (length == 0) return null;
+
+        Node<T> removedNode = head;
+
+        if (length == 1) {
+            head = tail = null;
+        } else {
+            head = head.next;
+        }
+
+        length--;
+        return removedNode.value();
     }
 
     @Override
