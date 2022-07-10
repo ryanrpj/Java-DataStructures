@@ -273,8 +273,14 @@ public class LinkedList<T> {
     private Node<T> getNode(int index) {
         if (invalidIndex(index)) return null;
 
-        int currentIndex = 0;
-        Node<T> retrievedNode = head;
+        if (index == 0)
+            return head;
+
+        if (index == length - 1)
+            return tail;
+
+        int currentIndex = 1;
+        Node<T> retrievedNode = head.next;
 
         while (currentIndex != index) {
             retrievedNode = retrievedNode.next;
