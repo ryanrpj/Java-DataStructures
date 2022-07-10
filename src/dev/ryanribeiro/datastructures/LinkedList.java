@@ -48,17 +48,12 @@ public class LinkedList<T> {
      * @return The element at the specified index.
      */
     public T get(int index) {
-        if (invalidIndex(index)) return null;
+        Node<T> retrievedNode = getNode(index);
 
-        int currentIndex = 0;
-        Node<T> elementToBeRetrieved = head;
+        if (retrievedNode != null)
+            return retrievedNode.value();
 
-        while (currentIndex != index) {
-            elementToBeRetrieved = elementToBeRetrieved.next;
-            currentIndex++;
-        }
-
-        return elementToBeRetrieved.value();
+        return null;
     }
 
     /**
@@ -166,5 +161,19 @@ public class LinkedList<T> {
 
     private boolean invalidIndex(int index) {
         return index < 0 || index > length - 1;
+    }
+
+    private Node<T> getNode(int index) {
+        if (invalidIndex(index)) return null;
+
+        int currentIndex = 0;
+        Node<T> retrievedNode = head;
+
+        while (currentIndex != index) {
+            retrievedNode = retrievedNode.next;
+            currentIndex++;
+        }
+
+        return retrievedNode;
     }
 }
