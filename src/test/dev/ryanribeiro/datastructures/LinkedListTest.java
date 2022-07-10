@@ -20,6 +20,15 @@ public class LinkedListTest {
     }
 
     @Test
+    public void canAppendAnElement() {
+        final LinkedList<Integer> list = new LinkedList<>();
+        assertEquals(list.size(), 0);
+
+        list.append(3);
+        assertEquals(list.size(), 1);
+    }
+
+    @Test
     public void canRemoveTheLastElement() {
         final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
 
