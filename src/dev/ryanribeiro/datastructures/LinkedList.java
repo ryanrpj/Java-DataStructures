@@ -28,6 +28,14 @@ public class LinkedList<T> {
     }
 
     /**
+     * Gets the current amount of elements within the list.
+     * @return Amount of elements.
+     */
+    public int size() {
+        return length;
+    }
+
+    /**
      * Adds an element to the end of the list.
      * @param element Element to be added.
      */
@@ -42,14 +50,6 @@ public class LinkedList<T> {
         }
 
         length++;
-    }
-
-    /**
-     * Gets the current amount of elements within the list.
-     * @return Amount of elements.
-     */
-    public int size() {
-        return length;
     }
 
     @Override
