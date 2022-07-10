@@ -1,7 +1,7 @@
 package dev.ryanribeiro.datastructures;
 
 final class Node<T> {
-    private final T value;
+    private T value;
     Node<T> next;
 
     Node(T value) {
@@ -10,6 +10,10 @@ final class Node<T> {
 
     public T value() {
         return value;
+    }
+
+    public void setValue(T newValue) {
+        value = newValue;
     }
 
     @Override
@@ -87,6 +91,25 @@ public class LinkedList<T> {
 
         length++;
         return true;
+    }
+
+    /**
+     * Replace the element at the specified index and returns it.
+     *
+     * @param index Index of the element to be replaced.
+     * @param newElement The new element to replace.
+     * @return The element that was replaced.
+     */
+    public T replace(int index, T newElement) {
+        final Node<T> nodeToReplaceValue = getNode(index);
+
+        if (nodeToReplaceValue == null) return null;
+
+        final T oldValue = nodeToReplaceValue.value();
+
+        nodeToReplaceValue.setValue(newElement);
+
+        return oldValue;
     }
 
     /**
