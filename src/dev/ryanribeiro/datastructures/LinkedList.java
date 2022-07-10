@@ -33,6 +33,15 @@ public class LinkedList<T> {
     }
 
     /**
+     * Gets the current amount of elements within the list.
+     *
+     * @return Amount of elements.
+     */
+    public int size() {
+        return length;
+    }
+
+    /**
      * Gets the element at the specified index.
      *
      * @param index Index of the element to be retrieved.
@@ -50,15 +59,6 @@ public class LinkedList<T> {
         }
 
         return elementToBeRetrieved.value();
-    }
-
-    /**
-     * Gets the current amount of elements within the list.
-     *
-     * @return Amount of elements.
-     */
-    public int size() {
-        return length;
     }
 
     /**
