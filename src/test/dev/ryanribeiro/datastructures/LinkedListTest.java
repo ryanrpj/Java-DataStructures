@@ -23,6 +23,17 @@ public class LinkedListTest {
     }
 
     @Test
+    public void canGetAnElementByIndex() {
+        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
+
+        final int retrievedElement = list.get(1);
+
+        assertEquals(2, retrievedElement);
+        assertNull(list.get(-1));
+        assertNull(list.get(5));
+    }
+
+    @Test
     public void canAppendAnElement() {
         final LinkedList<Integer> list = new LinkedList<>(1);
         assertEquals(1, list.size());
