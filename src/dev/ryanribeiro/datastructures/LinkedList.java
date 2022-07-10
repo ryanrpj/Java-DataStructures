@@ -33,6 +33,26 @@ public class LinkedList<T> {
     }
 
     /**
+     * Gets the element at the specified index.
+     *
+     * @param index Index of the element to be retrieved.
+     * @return The element at the specified index.
+     */
+    public T get(int index) {
+        if (index > length - 1 || index < 0) return null;
+
+        int currentIndex = 0;
+        Node<T> elementToBeRetrieved = head;
+
+        while (currentIndex != index) {
+            elementToBeRetrieved = elementToBeRetrieved.next;
+            currentIndex++;
+        }
+
+        return elementToBeRetrieved.value();
+    }
+
+    /**
      * Gets the current amount of elements within the list.
      *
      * @return Amount of elements.
