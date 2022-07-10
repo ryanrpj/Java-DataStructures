@@ -10,36 +10,36 @@ public class LinkedListTest {
     public void canInitializeWithZeroElements() {
         final LinkedList<Integer> list = new LinkedList<>();
 
-        assertEquals(list.size(), 0);
-        assertEquals(list.toString(), "[]");
+        assertEquals(0, list.size());
+        assertEquals("[]", list.toString());
     }
 
     @Test
     public void canInitializeWithMultipleElements() {
         final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
 
-        assertEquals(list.size(), 3);
-        assertEquals(list.toString(), "[1, 2, 3]");
+        assertEquals(3, list.size());
+        assertEquals("[1, 2, 3]", list.toString());
     }
 
     @Test
     public void canAppendAnElement() {
         final LinkedList<Integer> list = new LinkedList<>(1);
-        assertEquals(list.size(), 1);
+        assertEquals(1, list.size());
 
         list.append(3);
-        assertEquals(list.size(), 2);
-        assertEquals(list.toString(), "[1, 3]");
+        assertEquals(2, list.size());
+        assertEquals("[1, 3]", list.toString());
     }
 
     @Test
     public void canPrependAnElement() {
         final LinkedList<Integer> list = new LinkedList<>(2, 3);
-        assertEquals(list.size(), 2);
+        assertEquals(2, list.size());
 
         list.prepend(1);
-        assertEquals(list.size(), 3);
-        assertEquals(list.toString(), "[1, 2, 3]");
+        assertEquals(3, list.size());
+        assertEquals("[1, 2, 3]", list.toString());
     }
 
     @Test
@@ -47,14 +47,14 @@ public class LinkedListTest {
         final LinkedList<Integer> list = new LinkedList<>(1, 2);
 
         final int removedElement = list.removeLast();
-        assertEquals(removedElement, 2);
-        assertEquals(list.size(), 1);
-        assertEquals(list.toString(), "[1]");
+        assertEquals(2, removedElement);
+        assertEquals(1, list.size());
+        assertEquals("[1]", list.toString());
 
         list.removeLast();
         assertNull(list.removeLast());
-        assertEquals(list.size(), 0);
-        assertEquals(list.toString(), "[]");
+        assertEquals(0, list.size());
+        assertEquals("[]", list.toString());
     }
 
     @Test
@@ -66,8 +66,8 @@ public class LinkedListTest {
         list.append(2);
         list.append(3);
 
-        assertEquals(list.size(), 2);
-        assertEquals(list.toString(), "[2, 3]");
+        assertEquals(2, list.size());
+        assertEquals("[2, 3]", list.toString());
     }
 
     @Test
@@ -79,8 +79,8 @@ public class LinkedListTest {
         list.prepend(3);
         list.prepend(2);
 
-        assertEquals(list.size(), 2);
-        assertEquals(list.toString(), "[2, 3]");
+        assertEquals(2, list.size());
+        assertEquals("[2, 3]", list.toString());
     }
 
     @Test
@@ -88,14 +88,14 @@ public class LinkedListTest {
         final LinkedList<Integer> list = new LinkedList<>(1, 2);
 
         final int removedElement = list.removeFirst();
-        assertEquals(removedElement, 1);
-        assertEquals(list.size(), 1);
-        assertEquals(list.toString(), "[2]");
+        assertEquals(1, removedElement);
+        assertEquals(1, list.size());
+        assertEquals("[2]", list.toString());
 
         list.removeFirst();
         assertNull(list.removeFirst());
-        assertEquals(list.size(), 0);
-        assertEquals(list.toString(), "[]");
+        assertEquals(0, list.size());
+        assertEquals("[]", list.toString());
     }
 
     @Test
@@ -107,8 +107,8 @@ public class LinkedListTest {
         list.append(2);
         list.append(3);
 
-        assertEquals(list.size(), 2);
-        assertEquals(list.toString(), "[2, 3]");
+        assertEquals(2, list.size());
+        assertEquals("[2, 3]", list.toString());
     }
 
     @Test
@@ -120,14 +120,14 @@ public class LinkedListTest {
         list.prepend(3);
         list.prepend(2);
 
-        assertEquals(list.size(), 2);
-        assertEquals(list.toString(), "[2, 3]");
+        assertEquals(2, list.size());
+        assertEquals("[2, 3]", list.toString());
     }
 
     @Test
     public void canPrintElementsToConsole() {
         final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
 
-        assertEquals(list.toString(), "[1, 2, 3]");
+        assertEquals("[1, 2, 3]", list.toString());
     }
 }
