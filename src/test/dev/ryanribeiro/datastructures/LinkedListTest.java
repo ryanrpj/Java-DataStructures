@@ -40,12 +40,27 @@ public class LinkedListTest {
         final boolean secondElementInserted = list.insert(1, 3);
         final boolean thirdElementInserted = list.insert(2, 4);
         final boolean fourthElementInserted = list.insert(1, 2);
+        final boolean fifthElementInsert = list.insert(10, 5);
 
         assertTrue(firstElementInserted);
         assertTrue(secondElementInserted);
         assertTrue(thirdElementInserted);
         assertTrue(fourthElementInserted);
+        assertFalse(fifthElementInsert);
         assertEquals(4, list.size());
+        assertEquals("[1, 2, 3, 4]", list.toString());
+    }
+
+    @Test
+    public void canReplaceAnElementByIndex() {
+        final LinkedList<Integer> list = new LinkedList<>(1, 1, 2, 4);
+
+        final int firstReplacedElement = list.replace(1, 2);
+        final int secondReplacedElement = list.replace(2, 3);
+
+        assertEquals(1, firstReplacedElement);
+        assertEquals(2, secondReplacedElement);
+        assertNull(list.replace(10, 5));
         assertEquals("[1, 2, 3, 4]", list.toString());
     }
 
