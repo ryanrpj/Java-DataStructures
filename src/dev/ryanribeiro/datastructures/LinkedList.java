@@ -8,6 +8,10 @@ final class Node<T> {
         this.value = value;
     }
 
+    public T value() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value.toString();
@@ -50,6 +54,30 @@ public class LinkedList<T> {
         }
 
         length++;
+    }
+
+    /**
+     * Removes the last element of the list and returns it.
+     * @return The removed element.
+     */
+    public T removeLast() {
+        if (length == 0) return null;
+
+        Node<T> penultimateNode = head, ultimateNode = head;
+
+        while (ultimateNode.next != null) {
+            penultimateNode = ultimateNode;
+            ultimateNode = ultimateNode.next;
+        }
+
+        tail = penultimateNode;
+        tail.next = null;
+        length--;
+
+        if (length == 0)
+            head = tail = null;
+
+        return ultimateNode.value();
     }
 
     @Override
