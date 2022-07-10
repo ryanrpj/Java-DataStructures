@@ -32,6 +32,16 @@ public class LinkedListTest {
     }
 
     @Test
+    public void canPrependAnElement() {
+        final LinkedList<Integer> list = new LinkedList<>(2, 3);
+        assertEquals(list.size(), 2);
+
+        list.prepend(1);
+        assertEquals(list.size(), 3);
+        assertEquals(list.toString(), "[1, 2, 3]");
+    }
+
+    @Test
     public void canRemoveTheLastElement() {
         final LinkedList<Integer> list = new LinkedList<>(1, 2);
 
@@ -57,6 +67,19 @@ public class LinkedListTest {
         list.removeLast();
         list.append(2);
         list.append(3);
+
+        assertEquals(list.size(), 2);
+        assertEquals(list.toString(), "[2, 3]");
+    }
+
+    @Test
+    public void canPrependAnElementAfterRemovingLast() {
+        final LinkedList<Integer> list = new LinkedList<>(1);
+
+        list.removeLast();
+        list.removeLast();
+        list.prepend(3);
+        list.prepend(2);
 
         assertEquals(list.size(), 2);
         assertEquals(list.toString(), "[2, 3]");
