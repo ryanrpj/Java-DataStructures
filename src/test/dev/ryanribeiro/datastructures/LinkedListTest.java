@@ -6,24 +6,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LinkedListTest {
     @Test
-    public void canInitializeAnEmptyList() {
+    public void canInitializeWithZeroElements() {
         final LinkedList<Integer> list = new LinkedList<>();
 
         assertEquals(list.size(), 0);
     }
 
     @Test
-    public void canInitializeAListWithStartingElements() {
+    public void canInitializeWithMultipleElements() {
         final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
 
         assertEquals(list.size(), 3);
-    }
-
-    @Test
-    public void canPrintTheElementsToConsole() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
-
-        assertEquals(list.toString(), "[1, 2, 3]");
     }
 
     @Test
@@ -34,5 +27,12 @@ public class LinkedListTest {
 
         assertEquals(removedElement, 3);
         assertEquals(list.size(), 2);
+    }
+
+    @Test
+    public void canPrintElementsToConsole() {
+        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
+
+        assertEquals(list.toString(), "[1, 2, 3]");
     }
 }
