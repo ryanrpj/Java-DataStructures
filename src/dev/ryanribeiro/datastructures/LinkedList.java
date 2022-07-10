@@ -48,7 +48,7 @@ public class LinkedList<T> {
      * @return The element at the specified index.
      */
     public T get(int index) {
-        if (index > length - 1 || index < 0) return null;
+        if (invalidIndex(index)) return null;
 
         int currentIndex = 0;
         Node<T> elementToBeRetrieved = head;
@@ -162,5 +162,9 @@ public class LinkedList<T> {
         sb.append("]");
 
         return sb.toString();
+    }
+
+    private boolean invalidIndex(int index) {
+        return index < 0 || index > length - 1;
     }
 }
