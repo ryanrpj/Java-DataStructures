@@ -94,9 +94,38 @@ public class LinkedList<T> {
     }
 
     /**
+     * Removes the element at the specified index and returns it.
+     *
+     * @param index Index of the element to be removed.
+     * @return The removed element.
+     */
+    public T remove(int index) {
+        if (index == 0)
+            return removeFirst();
+
+        if (index == length - 1)
+            return removeLast();
+
+        Node<T> currentNodeBeforeSpecifiedIndex = getNode(index - 1);
+
+        if (currentNodeBeforeSpecifiedIndex == null) return null;
+
+        Node<T> nodeToBeRemoved = currentNodeBeforeSpecifiedIndex.next;
+
+        currentNodeBeforeSpecifiedIndex.next = nodeToBeRemoved.next;
+
+        length--;
+
+        if (length == 0)
+            head = tail = null;
+
+        return nodeToBeRemoved.value();
+    }
+
+    /**
      * Replace the element at the specified index and returns it.
      *
-     * @param index Index of the element to be replaced.
+     * @param index      Index of the element to be replaced.
      * @param newElement The new element to replace.
      * @return The element that was replaced.
      */
