@@ -222,6 +222,28 @@ public class LinkedList<T> {
         return removedNode.value();
     }
 
+    /**
+     * Reverse the order of the elements of the list.
+     * The last element becomes the first, and the first element becomes the last.
+     */
+    public void reverse() {
+        if (length < 2) return;
+
+        Node<T> temporaryNode = head;
+
+        head = tail;
+        tail = temporaryNode;
+
+        Node<T> nextNode, previousNode = null;
+
+        for (int i = 0; i < length; i++) {
+            nextNode = temporaryNode.next;
+            temporaryNode.next = previousNode;
+            previousNode = temporaryNode;
+            temporaryNode = nextNode;
+        }
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
