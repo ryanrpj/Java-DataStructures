@@ -22,10 +22,11 @@ public class LinkedList<T> {
     private Node<T> head, tail;
     private int length = 0;
 
-    public LinkedList() {}
+    public LinkedList() {
+    }
 
     @SafeVarargs
-    public LinkedList(T ...initialElements) {
+    public LinkedList(T... initialElements) {
         for (T element : initialElements) {
             this.append(element);
         }
@@ -33,6 +34,7 @@ public class LinkedList<T> {
 
     /**
      * Gets the current amount of elements within the list.
+     *
      * @return Amount of elements.
      */
     public int size() {
@@ -41,6 +43,7 @@ public class LinkedList<T> {
 
     /**
      * Adds an element to the end of the list.
+     *
      * @param element Element to be added.
      */
     public void append(T element) {
@@ -58,6 +61,7 @@ public class LinkedList<T> {
 
     /**
      * Adds an element to the beginning of the list.
+     *
      * @param element Element to be added.
      */
     public void prepend(T element) {
@@ -75,6 +79,7 @@ public class LinkedList<T> {
 
     /**
      * Removes the last element from the list and returns it.
+     *
      * @return The removed element.
      */
     public T removeLast() {
@@ -99,6 +104,7 @@ public class LinkedList<T> {
 
     /**
      * Removes the first element from the list and returns it.
+     *
      * @return The removed element.
      */
     public T removeFirst() {
