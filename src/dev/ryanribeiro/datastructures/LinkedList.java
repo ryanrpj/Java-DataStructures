@@ -57,6 +57,39 @@ public class LinkedList<T> {
     }
 
     /**
+     * Inserts an element at the specified index.
+     *
+     * @param index   Index to insert the element.
+     * @param element Element to be inserted.
+     * @return True of false indicating whether the element was inserted or not.
+     */
+    public boolean insert(int index, T element) {
+        if (index == 0) {
+            prepend(element);
+            return true;
+        }
+
+        if (index == length) {
+            append(element);
+            return true;
+        }
+
+        Node<T> nodeToBeInserted = new Node<>(element);
+        Node<T> currentNodeBeforeSpecifiedIndex = getNode(index - 1);
+
+        if (currentNodeBeforeSpecifiedIndex == null)
+            return false;
+
+        Node<T> currentNodeAtSpecifiedIndex = currentNodeBeforeSpecifiedIndex.next;
+
+        currentNodeBeforeSpecifiedIndex.next = nodeToBeInserted;
+        nodeToBeInserted.next = currentNodeAtSpecifiedIndex;
+
+        length++;
+        return true;
+    }
+
+    /**
      * Adds an element to the end of the list.
      *
      * @param element Element to be added.
