@@ -57,6 +57,23 @@ public class LinkedList<T> {
     }
 
     /**
+     * Adds an element to the beginning of the list.
+     * @param element Element to be added.
+     */
+    public void prepend(T element) {
+        final Node<T> newNode = new Node<>(element);
+
+        if (length == 0) {
+            head = tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+
+        length++;
+    }
+
+    /**
      * Removes the last element of the list and returns it.
      * @return The removed element.
      */
