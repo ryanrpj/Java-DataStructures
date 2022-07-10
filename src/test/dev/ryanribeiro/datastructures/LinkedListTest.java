@@ -2,8 +2,7 @@ package dev.ryanribeiro.datastructures;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LinkedListTest {
     @Test
@@ -31,6 +30,23 @@ public class LinkedListTest {
         assertEquals(2, retrievedElement);
         assertNull(list.get(-1));
         assertNull(list.get(5));
+    }
+
+    @Test
+    public void canInsertAnElementByIndex() {
+        final LinkedList<Integer> list = new LinkedList<>();
+
+        final boolean firstElementInserted = list.insert(0, 1);
+        final boolean secondElementInserted = list.insert(1, 3);
+        final boolean thirdElementInserted = list.insert(2, 4);
+        final boolean fourthElementInserted = list.insert(1, 2);
+
+        assertTrue(firstElementInserted);
+        assertTrue(secondElementInserted);
+        assertTrue(thirdElementInserted);
+        assertTrue(fourthElementInserted);
+        assertEquals(4, list.size());
+        assertEquals("[1, 2, 3, 4]", list.toString());
     }
 
     @Test
