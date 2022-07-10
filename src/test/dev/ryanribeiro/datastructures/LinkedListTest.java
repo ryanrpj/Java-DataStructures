@@ -25,4 +25,14 @@ public class LinkedListTest {
 
         assertEquals(list.toString(), "[1, 2, 3]");
     }
+
+    @Test
+    public void canRemoveTheLastElement() {
+        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
+
+        final int removedElement = list.removeLast();
+
+        assertEquals(removedElement, 3);
+        assertEquals(list.size(), 2);
+    }
 }
