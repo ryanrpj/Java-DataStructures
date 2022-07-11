@@ -12,4 +12,14 @@ public class DoublyLinkedListTest {
         assertEquals(0, list.size());
         assertEquals("[]", list.toString());
     }
+
+    @Test
+    public void canAppendAnElement() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+        list.append(3);
+        list.append(4);
+        assertEquals(2, list.size());
+        assertEquals("[3, 4]", list.toString());
+    }
 }
