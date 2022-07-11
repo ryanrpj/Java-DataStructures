@@ -14,6 +14,14 @@ public class DoublyLinkedListTest {
     }
 
     @Test
+    public void canInitializeWithMultipleElements() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 2, 3);
+
+        assertEquals(3, list.size());
+        assertEquals("[1, 2, 3]", list.toString());
+    }
+
+    @Test
     public void canAppendAnElement() {
         final DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
