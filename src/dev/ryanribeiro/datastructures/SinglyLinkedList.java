@@ -1,10 +1,10 @@
 package dev.ryanribeiro.datastructures;
 
-final class Node<T> {
+final class SinglyLinkedNode<T> {
     private T value;
-    Node<T> next;
+    SinglyLinkedNode<T> next;
 
-    Node(T value) {
+    SinglyLinkedNode(T value) {
         this.value = value;
     }
 
@@ -22,15 +22,15 @@ final class Node<T> {
     }
 }
 
-public class LinkedList<T> {
-    private Node<T> head, tail;
+public class SinglyLinkedList<T> {
+    private SinglyLinkedNode<T> head, tail;
     private int length = 0;
 
-    public LinkedList() {
+    public SinglyLinkedList() {
     }
 
     @SafeVarargs
-    public LinkedList(T... initialElements) {
+    public SinglyLinkedList(T... initialElements) {
         for (T element : initialElements) {
             this.append(element);
         }
@@ -52,7 +52,7 @@ public class LinkedList<T> {
      * @return The element at the specified index.
      */
     public T get(int index) {
-        Node<T> retrievedNode = getNode(index);
+        SinglyLinkedNode<T> retrievedNode = getNode(index);
 
         if (retrievedNode != null)
             return retrievedNode.value();
@@ -78,13 +78,13 @@ public class LinkedList<T> {
             return true;
         }
 
-        Node<T> nodeToBeInserted = new Node<>(element);
-        Node<T> currentNodeBeforeSpecifiedIndex = getNode(index - 1);
+        SinglyLinkedNode<T> nodeToBeInserted = new SinglyLinkedNode<>(element);
+        SinglyLinkedNode<T> currentNodeBeforeSpecifiedIndex = getNode(index - 1);
 
         if (currentNodeBeforeSpecifiedIndex == null)
             return false;
 
-        Node<T> currentNodeAtSpecifiedIndex = currentNodeBeforeSpecifiedIndex.next;
+        SinglyLinkedNode<T> currentNodeAtSpecifiedIndex = currentNodeBeforeSpecifiedIndex.next;
 
         currentNodeBeforeSpecifiedIndex.next = nodeToBeInserted;
         nodeToBeInserted.next = currentNodeAtSpecifiedIndex;
@@ -106,11 +106,11 @@ public class LinkedList<T> {
         if (index == length - 1)
             return removeLast();
 
-        Node<T> currentNodeBeforeSpecifiedIndex = getNode(index - 1);
+        SinglyLinkedNode<T> currentNodeBeforeSpecifiedIndex = getNode(index - 1);
 
         if (currentNodeBeforeSpecifiedIndex == null) return null;
 
-        Node<T> nodeToBeRemoved = currentNodeBeforeSpecifiedIndex.next;
+        SinglyLinkedNode<T> nodeToBeRemoved = currentNodeBeforeSpecifiedIndex.next;
 
         currentNodeBeforeSpecifiedIndex.next = nodeToBeRemoved.next;
 
@@ -130,7 +130,7 @@ public class LinkedList<T> {
      * @return The element that was replaced.
      */
     public T replace(int index, T newElement) {
-        final Node<T> nodeToReplaceValue = getNode(index);
+        final SinglyLinkedNode<T> nodeToReplaceValue = getNode(index);
 
         if (nodeToReplaceValue == null) return null;
 
@@ -147,7 +147,7 @@ public class LinkedList<T> {
      * @param element Element to be added.
      */
     public void append(T element) {
-        final Node<T> newNode = new Node<>(element);
+        final SinglyLinkedNode<T> newNode = new SinglyLinkedNode<>(element);
 
         if (tail != null) {
             tail.next = newNode;
@@ -165,7 +165,7 @@ public class LinkedList<T> {
      * @param element Element to be added.
      */
     public void prepend(T element) {
-        final Node<T> newNode = new Node<>(element);
+        final SinglyLinkedNode<T> newNode = new SinglyLinkedNode<>(element);
 
         if (length == 0) {
             head = tail = newNode;
@@ -185,7 +185,7 @@ public class LinkedList<T> {
     public T removeLast() {
         if (length == 0) return null;
 
-        Node<T> penultimateNode = head, ultimateNode = head;
+        SinglyLinkedNode<T> penultimateNode = head, ultimateNode = head;
 
         while (ultimateNode.next != null) {
             penultimateNode = ultimateNode;
@@ -210,7 +210,7 @@ public class LinkedList<T> {
     public T removeFirst() {
         if (length == 0) return null;
 
-        Node<T> removedNode = head;
+        SinglyLinkedNode<T> removedNode = head;
 
         if (length == 1) {
             head = tail = null;
@@ -229,12 +229,12 @@ public class LinkedList<T> {
     public void reverse() {
         if (length < 2) return;
 
-        Node<T> temporaryNode = head;
+        SinglyLinkedNode<T> temporaryNode = head;
 
         head = tail;
         tail = temporaryNode;
 
-        Node<T> nextNode, previousNode = null;
+        SinglyLinkedNode<T> nextNode, previousNode = null;
 
         for (int i = 0; i < length; i++) {
             nextNode = temporaryNode.next;
@@ -250,7 +250,7 @@ public class LinkedList<T> {
 
         sb.append("[");
 
-        Node<T> currentNode = head;
+        SinglyLinkedNode<T> currentNode = head;
 
         while (currentNode != null) {
             sb.append(currentNode);
@@ -270,7 +270,7 @@ public class LinkedList<T> {
         return index < 0 || index > length - 1;
     }
 
-    private Node<T> getNode(int index) {
+    private SinglyLinkedNode<T> getNode(int index) {
         if (invalidIndex(index)) return null;
 
         if (index == 0)
@@ -280,7 +280,7 @@ public class LinkedList<T> {
             return tail;
 
         int currentIndex = 1;
-        Node<T> retrievedNode = head.next;
+        SinglyLinkedNode<T> retrievedNode = head.next;
 
         while (currentIndex != index) {
             retrievedNode = retrievedNode.next;

@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LinkedListTest {
+public class SinglyLinkedListTest {
     @Test
     public void canInitializeWithZeroElements() {
-        final LinkedList<Integer> list = new LinkedList<>();
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
 
         assertEquals(0, list.size());
         assertEquals("[]", list.toString());
@@ -15,7 +15,7 @@ public class LinkedListTest {
 
     @Test
     public void canInitializeWithMultipleElements() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1, 2, 3);
 
         assertEquals(3, list.size());
         assertEquals("[1, 2, 3]", list.toString());
@@ -23,7 +23,7 @@ public class LinkedListTest {
 
     @Test
     public void canGetAnElementByIndex() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1, 2, 3);
 
         final int retrievedElement = list.get(1);
 
@@ -34,7 +34,7 @@ public class LinkedListTest {
 
     @Test
     public void canInsertAnElementByIndex() {
-        final LinkedList<Integer> list = new LinkedList<>();
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
 
         final boolean firstElementInserted = list.insert(0, 1);
         final boolean secondElementInserted = list.insert(1, 3);
@@ -53,7 +53,7 @@ public class LinkedListTest {
 
     @Test
     public void canRemoveAnElementByIndex() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3, 4, 5);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1, 2, 3, 4, 5);
 
         final int firstRemovedElement = list.remove(0);
         final int secondRemovedElement = list.remove(3);
@@ -68,7 +68,7 @@ public class LinkedListTest {
 
     @Test
     public void canReplaceAnElementByIndex() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 1, 2, 4);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1, 1, 2, 4);
 
         final int firstReplacedElement = list.replace(1, 2);
         final int secondReplacedElement = list.replace(2, 3);
@@ -81,7 +81,7 @@ public class LinkedListTest {
 
     @Test
     public void canAppendAnElement() {
-        final LinkedList<Integer> list = new LinkedList<>(1);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1);
         assertEquals(1, list.size());
 
         list.append(3);
@@ -91,7 +91,7 @@ public class LinkedListTest {
 
     @Test
     public void canPrependAnElement() {
-        final LinkedList<Integer> list = new LinkedList<>(2, 3);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(2, 3);
         assertEquals(2, list.size());
 
         list.prepend(1);
@@ -101,7 +101,7 @@ public class LinkedListTest {
 
     @Test
     public void canRemoveTheLastElement() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 2);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1, 2);
 
         final int removedElement = list.removeLast();
         assertEquals(2, removedElement);
@@ -116,7 +116,7 @@ public class LinkedListTest {
 
     @Test
     public void canAppendAnElementAfterRemovingLast() {
-        final LinkedList<Integer> list = new LinkedList<>(1);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1);
 
         list.removeLast();
         list.removeLast();
@@ -129,7 +129,7 @@ public class LinkedListTest {
 
     @Test
     public void canPrependAnElementAfterRemovingLast() {
-        final LinkedList<Integer> list = new LinkedList<>(1);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1);
 
         list.removeLast();
         list.removeLast();
@@ -142,7 +142,7 @@ public class LinkedListTest {
 
     @Test
     public void canRemoveTheFirstElement() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 2);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1, 2);
 
         final int removedElement = list.removeFirst();
         assertEquals(1, removedElement);
@@ -157,7 +157,7 @@ public class LinkedListTest {
 
     @Test
     public void canAppendAnElementAfterRemovingFirst() {
-        final LinkedList<Integer> list = new LinkedList<>(1);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1);
 
         list.removeFirst();
         list.removeFirst();
@@ -170,7 +170,7 @@ public class LinkedListTest {
 
     @Test
     public void canPrependAnElementAfterRemovingFirst() {
-        final LinkedList<Integer> list = new LinkedList<>(1);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1);
 
         list.removeFirst();
         list.removeFirst();
@@ -183,7 +183,7 @@ public class LinkedListTest {
 
     @Test
     public void canReverseTheOrderOfTheElements() {
-        final LinkedList<Integer> list = new LinkedList<>();
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
         list.reverse();
 
         assertEquals("[]", list.toString());
@@ -203,7 +203,7 @@ public class LinkedListTest {
 
     @Test
     public void canPrintElementsToConsole() {
-        final LinkedList<Integer> list = new LinkedList<>(1, 2, 3);
+        final SinglyLinkedList<Integer> list = new SinglyLinkedList<>(1, 2, 3);
 
         assertEquals("[1, 2, 3]", list.toString());
     }
