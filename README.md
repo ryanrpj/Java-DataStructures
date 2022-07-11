@@ -19,10 +19,10 @@ high.
 | ❌ Hash Table                                | ❌ Quicksort      |
 | ❌ Graph                                     | ❌ Tree Traversal |
 
-Items prefixed with a green check (✅) are those I already finished studying and have successfully implemented the
+Items prefixed with a check (✅) are those I already finished studying and have successfully implemented the
 source code. Feel free to click on any of them to have a brief explanation of it and see what methods I have
 implemented for that particular item.
 
-Items prefixed with a red check (❌) are those I'm currently studying or are on my waiting list for future research.
+Items prefixed with a cross-check (❌) are those I'm currently studying or are on my waiting list for future research.
 
-I will keep updating this repository until all items are prefixed with green checks.
+I will keep updating this repository until the day that there are no cross-checks.

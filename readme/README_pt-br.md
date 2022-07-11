@@ -20,10 +20,10 @@ alta.
 | ❌ Tabela de Dispersão                    | ❌ Quicksort               |
 | ❌ Grafo                                  | ❌ Tree Traversal          |
 
-Os itens prefixados com (✅) são aqueles que eu já finalizei os estudos e já implementei o código fonte. Você pode clicar
-nesses itens para ver uma breve explicação e quais operações eu implementei no código.
+Os itens prefixados com um check (✅) são aqueles que eu já finalizei os estudos e já implementei o código fonte.
+Você pode clicar nesses itens para ver uma breve explicação e quais operações eu implementei no código.
 
 Os itens prefixados com (❌) são aqueles que eu estou estudando atualmente, ou estão na minha lista para estudar
 futuramente.
 
-Irei continuar atualizando este repositório até que todos os itens estejam verdes.
+Irei continuar atualizando este repositório até que todos os itens estejam com um check.
