@@ -21,6 +21,12 @@ public class DoublyLinkedList<T> {
     public DoublyLinkedList() {
     }
 
+    @SafeVarargs
+    public DoublyLinkedList(T... initialElements) {
+        for (T element : initialElements)
+            append(element);
+    }
+
     /**
      * Gets the current amount of elements within the list.
      *
