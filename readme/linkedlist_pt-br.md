@@ -1,5 +1,7 @@
 # 💠 Lista Encadeada
 
+- This content is available in [American English 🇺🇸](linkedlist_en-us.md).
+
 ![Ilustração de uma lista encadeada com 4 elementos, onde cada elemento aponta para o próximo](../images/linkedlist.png "Representação gráfica de uma lista encadeada")
 
 ### 📝 Breve descrição

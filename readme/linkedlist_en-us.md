@@ -1,5 +1,7 @@
 # 💠 Linked List
 
+- Este conteúdo está disponível em [português do Brasil 🇧🇷](linkedlist_pt-br.md).
+
 ![Illustration of a linked list with 4 elements, where each element points to the next one.](../images/linkedlist.png "Graphical representation of a linked list")
 
 ### 📝 Brief overview
