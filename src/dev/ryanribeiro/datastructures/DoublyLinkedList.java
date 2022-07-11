@@ -7,6 +7,11 @@ final class DoublyLinkedNode<T> {
     DoublyLinkedNode(T value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
 }
 
 public class DoublyLinkedList<T> {
