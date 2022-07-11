@@ -30,6 +30,25 @@ public class DoublyLinkedList<T> {
         return this.length;
     }
 
+    /**
+     * Adds an element to the end of the list.
+     *
+     * @param element Element to be added.
+     */
+    public void append(T element) {
+        final DoublyLinkedNode<T> newNode = new DoublyLinkedNode<>(element);
+
+        if (length == 0) {
+            head = tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.previous = tail;
+            tail = newNode;
+        }
+
+        length++;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
