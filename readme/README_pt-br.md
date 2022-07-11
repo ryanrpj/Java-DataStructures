@@ -13,7 +13,7 @@ alta.
 | Estrutura de dados                       | Algoritmos                |
 |------------------------------------------|---------------------------|
 | ✅ [Lista Encadeada](linkedlist_pt-br.md) | ❌ Recursividade           |
-| ❌ Lista Duplamente Ligada                | ❌ Ordenação por Flutuação |
+| ❌ Lista Duplamente Encadeada             | ❌ Ordenação por Flutuação |
 | ❌ Pilha                                  | ❌ Ordenação por Seleção   |
 | ❌ Fila                                   | ❌ Ordenação por Inserção  |
 | ❌ Árvore binária                         | ❌ Ordenação por Mistura   |
