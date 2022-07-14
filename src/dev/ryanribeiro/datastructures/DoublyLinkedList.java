@@ -61,15 +61,17 @@ public class DoublyLinkedList<T> {
      * @param element Element to be added.
      */
     public void prepend(T element) {
+        DoublyLinkedNode<T> newNode = new DoublyLinkedNode<>(element);
+
         if (length == 0) {
-            append(element);
+            head = tail = newNode;
         } else {
-            DoublyLinkedNode<T> newNode = new DoublyLinkedNode<>(element);
             head.previous = newNode;
             newNode.next = head;
             head = newNode;
-            length++;
         }
+
+        length++;
     }
 
     /**
