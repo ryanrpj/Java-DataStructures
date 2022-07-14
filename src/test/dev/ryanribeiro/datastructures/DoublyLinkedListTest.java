@@ -23,6 +23,23 @@ public class DoublyLinkedListTest {
     }
 
     @Test
+    public void canGetAnElementByIndex() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 2, 3, 4);
+
+        final int firstRetrievedElement = list.get(0);
+        final int secondRetrievedElement = list.get(1);
+        final int thirdRetrievedElement = list.get(2);
+        final int fourthRetrievedElement = list.get(3);
+        final Integer fifthRetrievedElement = list.get(4);
+
+        assertEquals(1, firstRetrievedElement);
+        assertEquals(2, secondRetrievedElement);
+        assertEquals(3, thirdRetrievedElement);
+        assertEquals(4, fourthRetrievedElement);
+        assertNull(fifthRetrievedElement);
+    }
+
+    @Test
     public void canAppendAnElement() {
         final DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
 
