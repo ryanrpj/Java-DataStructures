@@ -2,8 +2,7 @@ package dev.ryanribeiro.datastructures;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DoublyLinkedListTest {
     @Test
@@ -37,6 +36,25 @@ public class DoublyLinkedListTest {
         assertEquals(3, thirdRetrievedElement);
         assertEquals(4, fourthRetrievedElement);
         assertNull(fifthRetrievedElement);
+    }
+
+    @Test
+    public void canInsertAnElementByIndex() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
+        final boolean firstElementInserted = list.insert(0, 1);
+        final boolean secondElementInserted = list.insert(1, 3);
+        final boolean thirdElementInserted = list.insert(2, 4);
+        final boolean fourthElementInserted = list.insert(1, 2);
+        final boolean fifthElementInsert = list.insert(10, 5);
+
+        assertTrue(firstElementInserted);
+        assertTrue(secondElementInserted);
+        assertTrue(thirdElementInserted);
+        assertTrue(fourthElementInserted);
+        assertFalse(fifthElementInsert);
+        assertEquals(4, list.size());
+        assertEquals("[1, 2, 3, 4]", list.toString());
     }
 
     @Test
