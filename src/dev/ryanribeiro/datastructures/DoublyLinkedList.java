@@ -1,11 +1,19 @@
 package dev.ryanribeiro.datastructures;
 
 final class DoublyLinkedNode<T> {
-    final T value;
+    private T value;
     DoublyLinkedNode<T> previous, next;
 
     DoublyLinkedNode(T value) {
         this.value = value;
+    }
+
+    public T value() {
+        return value;
+    }
+
+    public void setValue(T newValue) {
+        value = newValue;
     }
 
     @Override
@@ -47,7 +55,26 @@ public class DoublyLinkedList<T> {
 
         if (nodeAtIndex == null) return null;
 
-        return nodeAtIndex.value;
+        return nodeAtIndex.value();
+    }
+
+    /**
+     * Replace the element at the specified index and returns it.
+     *
+     * @param index      Index of the element to be replaced.
+     * @param newElement The new element to replace.
+     * @return The element that was replaced.
+     */
+    public T replace(int index, T newElement) {
+        final DoublyLinkedNode<T> nodeToReplaceValue = getNodeAtIndex(index);
+
+        if (nodeToReplaceValue == null) return null;
+
+        final T oldValue = nodeToReplaceValue.value();
+
+        nodeToReplaceValue.setValue(newElement);
+
+        return oldValue;
     }
 
     /**
@@ -107,7 +134,7 @@ public class DoublyLinkedList<T> {
         }
 
         length--;
-        return removedNode.value;
+        return removedNode.value();
     }
 
     /**
@@ -129,7 +156,7 @@ public class DoublyLinkedList<T> {
         }
 
         length--;
-        return removedNode.value;
+        return removedNode.value();
     }
 
     @Override
