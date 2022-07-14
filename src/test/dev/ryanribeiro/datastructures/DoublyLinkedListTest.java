@@ -81,4 +81,46 @@ public class DoublyLinkedListTest {
         assertEquals(2, list.size());
         assertEquals("[2, 3]", list.toString());
     }
+
+    @Test
+    public void canRemoveTheFirstElement() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 2);
+
+        final int firstRemovedElement = list.removeFirst();
+        assertEquals(1, firstRemovedElement);
+        assertEquals(1, list.size());
+        assertEquals("[2]", list.toString());
+
+        final int secondRemovedElement = list.removeFirst();
+        assertEquals(2, secondRemovedElement);
+        assertNull(list.removeFirst());
+        assertEquals(0, list.size());
+        assertEquals("[]", list.toString());
+    }
+
+    @Test
+    public void canAppendAnElementAfterRemovingFirst() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1);
+
+        list.removeFirst();
+        list.removeFirst();
+        list.append(2);
+        list.append(3);
+
+        assertEquals(2, list.size());
+        assertEquals("[2, 3]", list.toString());
+    }
+
+    @Test
+    public void canPrependAnElementAfterRemovingFirst() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1);
+
+        list.removeFirst();
+        list.removeFirst();
+        list.prepend(3);
+        list.prepend(2);
+
+        assertEquals(2, list.size());
+        assertEquals("[2, 3]", list.toString());
+    }
 }
