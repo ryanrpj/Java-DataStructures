@@ -56,6 +56,23 @@ public class DoublyLinkedList<T> {
     }
 
     /**
+     * Adds an element to the beginning of the list.
+     *
+     * @param element Element to be added.
+     */
+    public void prepend(T element) {
+        if (length == 0) {
+            append(element);
+        } else {
+            DoublyLinkedNode<T> newNode = new DoublyLinkedNode<>(element);
+            head.previous = newNode;
+            newNode.next = head;
+            head = newNode;
+            length++;
+        }
+    }
+
+    /**
      * Removes the last element from the list and returns it.
      *
      * @return The removed element.
