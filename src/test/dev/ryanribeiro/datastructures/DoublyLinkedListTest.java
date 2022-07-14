@@ -58,6 +58,21 @@ public class DoublyLinkedListTest {
     }
 
     @Test
+    public void canRemoveAnElementByIndex() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 2, 3, 4, 5);
+
+        final int firstRemovedElement = list.remove(0);
+        final int secondRemovedElement = list.remove(3);
+        final int thirdRemovedElement = list.remove(1);
+
+        assertEquals(1, firstRemovedElement);
+        assertEquals(5, secondRemovedElement);
+        assertEquals(3, thirdRemovedElement);
+        assertEquals(2, list.size());
+        assertEquals("[2, 4]", list.toString());
+    }
+
+    @Test
     public void canReplaceAnElementByIndex() {
         final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 1, 2, 4);
 
