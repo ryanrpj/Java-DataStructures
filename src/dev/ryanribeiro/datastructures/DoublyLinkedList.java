@@ -225,6 +225,28 @@ public class DoublyLinkedList<T> {
         return removedNode.value();
     }
 
+    /**
+     * Reverse the order of the elements of the list.
+     * The last element becomes the first, and the first element becomes the last.
+     */
+    public void reverse() {
+        if (length == 0 || length == 1) return;
+
+        DoublyLinkedNode<T> temporary = head;
+
+        head = tail;
+        tail = temporary;
+
+        DoublyLinkedNode<T> currentNode;
+
+        while (temporary != null) {
+            currentNode = temporary.previous;
+            temporary.previous = temporary.next;
+            temporary.next = currentNode;
+            temporary = temporary.previous;
+        }
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
