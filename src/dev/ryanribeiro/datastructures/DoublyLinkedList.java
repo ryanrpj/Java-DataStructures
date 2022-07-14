@@ -59,6 +59,38 @@ public class DoublyLinkedList<T> {
     }
 
     /**
+     * Inserts an element at the specified index.
+     *
+     * @param index   Index to insert the element.
+     * @param element Element to be inserted.
+     * @return True of false indicating whether the element was inserted or not.
+     */
+    public boolean insert(int index, T element) {
+        if (index == 0) {
+            prepend(element);
+        } else if (index == length) {
+            append(element);
+        } else {
+            DoublyLinkedNode<T> currentNodeAtIndex = getNodeAtIndex(index);
+
+            if (currentNodeAtIndex == null) return false;
+
+            DoublyLinkedNode<T> newNode = new DoublyLinkedNode<>(element);
+            DoublyLinkedNode<T> currentNodeAtPreviousIndex = currentNodeAtIndex.previous;
+
+            newNode.next = currentNodeAtIndex;
+            newNode.previous = currentNodeAtPreviousIndex;
+
+            currentNodeAtIndex.previous = newNode;
+            currentNodeAtPreviousIndex.next = newNode;
+
+            length++;
+        }
+
+        return true;
+    }
+
+    /**
      * Replace the element at the specified index and returns it.
      *
      * @param index      Index of the element to be replaced.
