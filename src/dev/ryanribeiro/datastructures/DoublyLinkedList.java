@@ -55,6 +55,28 @@ public class DoublyLinkedList<T> {
         length++;
     }
 
+    /**
+     * Removes the last element from the list and returns it.
+     *
+     * @return The removed element.
+     */
+    public T removeLast() {
+        if (length == 0) return null;
+
+        final DoublyLinkedNode<T> removedNode = tail;
+
+        if (length == 1) {
+            head = tail = null;
+        } else {
+            tail = tail.previous;
+            tail.next = null;
+            removedNode.previous = null;
+        }
+
+        length--;
+        return removedNode.value;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
