@@ -33,6 +33,15 @@ public class DoublyLinkedListTest {
     }
 
     @Test
+    public void canPrependAnElement() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(2, 3);
+
+        list.prepend(1);
+        assertEquals(3, list.size());
+        assertEquals("[1, 2, 3]", list.toString());
+    }
+
+    @Test
     public void canRemoveTheLastElement() {
         final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 2);
 
@@ -55,6 +64,19 @@ public class DoublyLinkedListTest {
         list.removeLast();
         list.append(2);
         list.append(3);
+
+        assertEquals(2, list.size());
+        assertEquals("[2, 3]", list.toString());
+    }
+
+    @Test
+    public void canPrependAnElementAfterRemovingLast() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1);
+
+        list.removeLast();
+        list.removeLast();
+        list.prepend(3);
+        list.prepend(2);
 
         assertEquals(2, list.size());
         assertEquals("[2, 3]", list.toString());
