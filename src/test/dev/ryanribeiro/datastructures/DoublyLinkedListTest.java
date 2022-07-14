@@ -171,4 +171,11 @@ public class DoublyLinkedListTest {
         assertEquals(2, list.size());
         assertEquals("[2, 3]", list.toString());
     }
+
+    @Test
+    public void canPrintElementsToConsole() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 2, 3);
+
+        assertEquals("[1, 2, 3]", list.toString());
+    }
 }
