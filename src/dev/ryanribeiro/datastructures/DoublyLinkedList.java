@@ -43,18 +43,9 @@ public class DoublyLinkedList<T> {
      * @return The element at the specified index.
      */
     public T get(int index) {
-        if (invalidIndex(index)) return null;
+        DoublyLinkedNode<T> nodeAtIndex = getNodeAtIndex(index);
 
-        DoublyLinkedNode<T> nodeAtIndex;
-
-        if (index == 0) return head.value;
-        if (index == length - 1) return tail.value;
-
-        if (index < length / 2) {
-            nodeAtIndex = getNodeAtIndexIteratingFromHead(index);
-        } else {
-            nodeAtIndex = getNodeAtIndexIteratingFromTail(index);
-        }
+        if (nodeAtIndex == null) return null;
 
         return nodeAtIndex.value;
     }
@@ -163,8 +154,21 @@ public class DoublyLinkedList<T> {
         return sb.toString();
     }
 
-    private boolean invalidIndex(int index) {
-        return index < 0 || index > length - 1;
+    private DoublyLinkedNode<T> getNodeAtIndex(int index) {
+        if (invalidIndex(index)) return null;
+
+        DoublyLinkedNode<T> nodeAtIndex;
+
+        if (index == 0) return head;
+        if (index == length - 1) return tail;
+
+        if (index < length / 2) {
+            nodeAtIndex = getNodeAtIndexIteratingFromHead(index);
+        } else {
+            nodeAtIndex = getNodeAtIndexIteratingFromTail(index);
+        }
+
+        return nodeAtIndex;
     }
 
     private DoublyLinkedNode<T> getNodeAtIndexIteratingFromHead(int index) {
@@ -185,5 +189,9 @@ public class DoublyLinkedList<T> {
         }
 
         return nodeAtIndex;
+    }
+
+    private boolean invalidIndex(int index) {
+        return index < 0 || index > length - 1;
     }
 }
