@@ -96,6 +96,28 @@ public class DoublyLinkedList<T> {
         return removedNode.value;
     }
 
+    /**
+     * Removes the first element from the list and returns it.
+     *
+     * @return The removed element.
+     */
+    public T removeFirst() {
+        if (length == 0) return null;
+
+        DoublyLinkedNode<T> removedNode = head;
+
+        if (length == 1) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.previous = null;
+            removedNode.next = null;
+        }
+
+        length--;
+        return removedNode.value;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
