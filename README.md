@@ -9,15 +9,15 @@ high.
 
 ## Table of content:
 
-| Data Structures                             | Algorithms       |
-|---------------------------------------------|------------------|
-| ✅ [Linked List](readme/linkedlist_en-us.md) | ❌ Recursion      |
-| ❌ Doubly Linked List                        | ❌ Bubble Sort    |
-| ❌ Stack                                     | ❌ Selection Sort |
-| ❌ Queue                                     | ❌ Insertion Sort |
-| ❌ Binary Tree                               | ❌ Merge Sort     |
-| ❌ Hash Table                                | ❌ Quicksort      |
-| ❌ Graph                                     | ❌ Tree Traversal |
+| Data Structures                                          | Algorithms       |
+|----------------------------------------------------------|------------------|
+| ✅ [Linked List](readme/linkedlist_en-us.md)              | ❌ Recursion      |
+| ✅ [Doubly Linked List](readme/doublylinkedlist_en-us.md) | ❌ Bubble Sort    |
+| ❌ Stack                                                  | ❌ Selection Sort |
+| ❌ Queue                                                  | ❌ Insertion Sort |
+| ❌ Binary Tree                                            | ❌ Merge Sort     |
+| ❌ Hash Table                                             | ❌ Quicksort      |
+| ❌ Graph                                                  | ❌ Tree Traversal |
 
 Items prefixed with a check (✅) are those I already finished studying and have successfully implemented the
 source code. Feel free to click on any of them to have a brief explanation of it and see what methods I have

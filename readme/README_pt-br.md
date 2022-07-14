@@ -10,15 +10,15 @@ alta.
 
 ## Tabela de conteúdo:
 
-| Estrutura de dados                       | Algoritmos                |
-|------------------------------------------|---------------------------|
-| ✅ [Lista Encadeada](linkedlist_pt-br.md) | ❌ Recursividade           |
-| ❌ Lista Duplamente Encadeada             | ❌ Ordenação por Flutuação |
-| ❌ Pilha                                  | ❌ Ordenação por Seleção   |
-| ❌ Fila                                   | ❌ Ordenação por Inserção  |
-| ❌ Árvore binária                         | ❌ Ordenação por Mistura   |
-| ❌ Tabela de Dispersão                    | ❌ Quicksort               |
-| ❌ Grafo                                  | ❌ Tree Traversal          |
+| Estrutura de dados                                        | Algoritmos                |
+|-----------------------------------------------------------|---------------------------|
+| ✅ [Lista Encadeada](linkedlist_pt-br.md)                  | ❌ Recursividade           |
+| ✅ [Lista Duplamente Encadeada](doublylinkedlist_pt-br.md) | ❌ Ordenação por Flutuação |
+| ❌ Pilha                                                   | ❌ Ordenação por Seleção   |
+| ❌ Fila                                                    | ❌ Ordenação por Inserção  |
+| ❌ Árvore binária                                          | ❌ Ordenação por Mistura   |
+| ❌ Tabela de Dispersão                                     | ❌ Quicksort               |
+| ❌ Grafo                                                   | ❌ Tree Traversal          |
 
 Os itens prefixados com um check (✅) são aqueles que eu já finalizei os estudos e já implementei o código fonte.
 Você pode clicar nesses itens para ver uma breve explicação e quais operações eu implementei no código.
