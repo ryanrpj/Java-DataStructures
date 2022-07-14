@@ -188,6 +188,26 @@ public class DoublyLinkedListTest {
     }
 
     @Test
+    public void canReverseTheOrderOfTheElements() {
+        final DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.reverse();
+
+        assertEquals("[]", list.toString());
+
+        list.append(1);
+        list.reverse();
+
+        assertEquals("[1]", list.toString());
+
+        list.append(2);
+        list.append(3);
+        list.append(4);
+
+        list.reverse();
+        assertEquals("[4, 3, 2, 1]", list.toString());
+    }
+
+    @Test
     public void canPrintElementsToConsole() {
         final DoublyLinkedList<Integer> list = new DoublyLinkedList<>(1, 2, 3);
 
