@@ -91,6 +91,40 @@ public class DoublyLinkedList<T> {
     }
 
     /**
+     * Removes the element at the specified index and returns it.
+     *
+     * @param index Index of the element to be removed.
+     * @return The removed element.
+     */
+    public T remove(int index) {
+        T removedElement;
+
+        if (index == 0) {
+            removedElement = removeFirst();
+        } else if (index == length - 1) {
+            removedElement = removeLast();
+        } else {
+            DoublyLinkedNode<T> nodeToBeRemoved = getNodeAtIndex(index);
+
+            if (nodeToBeRemoved == null) return null;
+
+            DoublyLinkedNode<T> previousNodeAtIndex = nodeToBeRemoved.previous;
+            DoublyLinkedNode<T> nextNodeAtIndex = nodeToBeRemoved.next;
+
+            nodeToBeRemoved.next = nodeToBeRemoved.previous = null;
+
+            previousNodeAtIndex.next = nextNodeAtIndex;
+            nextNodeAtIndex.previous = previousNodeAtIndex;
+
+            removedElement = nodeToBeRemoved.value();
+
+            length--;
+        }
+
+        return removedElement;
+    }
+
+    /**
      * Replace the element at the specified index and returns it.
      *
      * @param index      Index of the element to be replaced.
